@@ -36,7 +36,12 @@ A ROS Noetic robotic-arm project connecting
 ---
 
 
-## ◈ The Motion Chain
+</div>
+
+---
+
+
+<h2 align="center">◈ The Motion Chain</h2>
 
 <p align="center">
   This project follows a full motion pipeline, starting from geometric understanding and ending with physical robot actuation.
@@ -84,9 +89,11 @@ A ROS Noetic robotic-arm project connecting
 
 <br>
 
-## ◈ System Choreography
+<h2 align="center">◈ System Choreography</h2>
 
-Instead of treating simulation, ROS control and hardware as separate topics, **frame2motion** follows one continuous motion path.
+<p align="center">
+Instead of treating simulation, ROS control and hardware as separate topics, <b>frame2motion</b> follows one continuous motion path.
+</p>
 
 ```mermaid
 %%{init: {"theme":"base","themeVariables":{"background":"#0d1117","primaryTextColor":"#f8fafc","lineColor":"#64748b"}}}%%
@@ -122,15 +129,13 @@ flowchart LR
 
 ---
 
-# Kinematic Atlas
+<h1 align="center">Kinematic Atlas</h1>
 
-## 01 — One point, two frames
+<h2 align="center">01 — One point, two frames</h2>
 
-Everything begins with one question:
+<p align="center">Everything begins with one question:</p>
 
-> **How can the same physical point have different coordinates depending on the frame observing it?**
-
-The project starts in 2D to make the geometry intuitive, then extends the same reasoning to 3D rigid-body motion.
+<p align="center"><b>How can the same physical point have different coordinates depending on the frame observing it?</b></p>
 
 <p align="center">
   The project starts in 2D to build intuition, then extends the same ideas to 3D rigid-body motion.
@@ -145,7 +150,7 @@ The project starts in 2D to make the geometry intuitive, then extends the same r
 
 <sub>01</sub>
 
-### Translation
+<h3 align="center">Translation</h3>
 
 **Position Shift**
 
@@ -159,7 +164,7 @@ The project starts in 2D to make the geometry intuitive, then extends the same r
 
 <sub>02</sub>
 
-### Rotation
+<h3 align="center">Rotation</h3>
 
 **Orientation Change**
 
@@ -173,7 +178,7 @@ The project starts in 2D to make the geometry intuitive, then extends the same r
 
 <sub>03</sub>
 
-### Rigid Transform
+<h3 align="center">Rigid Transform</h3>
 
 **Position + Orientation**
 
@@ -190,7 +195,7 @@ The project starts in 2D to make the geometry intuitive, then extends the same r
 <details>
 <summary><b> Open the 2D derivation</b></summary>
 
-### Translation
+<h3 align="center">Translation</h3>
 
 ```math
 \boxed{
@@ -198,7 +203,7 @@ The project starts in 2D to make the geometry intuitive, then extends the same r
 }
 ```
 
-### Rotation
+<h3 align="center">Rotation</h3>
 
 ```math
 \mathbf{R}(\beta)=
@@ -214,7 +219,7 @@ The project starts in 2D to make the geometry intuitive, then extends the same r
 }
 ```
 
-### Homogeneous transformation
+<h3 align="center">Homogeneous transformation</h3>
 
 ```math
 \boxed{
@@ -231,12 +236,12 @@ The project starts in 2D to make the geometry intuitive, then extends the same r
 
 ---
 
-## 02 — From the plane to 3D
+<h2 align="center">02 — From the plane to 3D</h2>
 
 <details>
 <summary><b> Open the 3D rotation matrices</b></summary>
 
-### Rotation around X
+<h3 align="center">Rotation around X</h3>
 
 ```math
 \mathbf{R}_x(\gamma)=
@@ -247,7 +252,7 @@ The project starts in 2D to make the geometry intuitive, then extends the same r
 \end{bmatrix}
 ```
 
-### Rotation around Y
+<h3 align="center">Rotation around Y</h3>
 
 ```math
 \mathbf{R}_y(\beta)=
@@ -258,7 +263,7 @@ The project starts in 2D to make the geometry intuitive, then extends the same r
 \end{bmatrix}
 ```
 
-### Rotation around Z
+<h3 align="center">Rotation around Z</h3>
 
 ```math
 \mathbf{R}_z(\alpha)=
@@ -283,7 +288,7 @@ The project starts in 2D to make the geometry intuitive, then extends the same r
 
 </details>
 
-### 3D rigid-body transform
+<h3 align="center">3D rigid-body transform</h3>
 
 ```math
 {}^{W}\mathbf{T}_{L} =
@@ -297,7 +302,7 @@ r_{31} & r_{32} & r_{33} & L_z \\
 
 ---
 
-## 03 — A robot is a chain of frames
+<h2 align="center">03 — A robot is a chain of frames</h2>
 
 ```mermaid
 %%{init: {"theme":"base","themeVariables":{"background":"#0d1117","primaryTextColor":"#ffffff","lineColor":"#94a3b8"}}}%%
@@ -325,13 +330,15 @@ flowchart LR
 {}^{n}\mathbf{T}_{E}
 ```
 
-This is the mathematical backbone behind **forward kinematics**, **TF trees**, and pose propagation in ROS.
+<p align="center">
+This is the mathematical backbone behind <b>forward kinematics</b>, <b>TF trees</b>, and pose propagation in ROS.
+</p>
 
 ---
 
-# Robot Description
+<h1 align="center">Robot Description</h1>
 
-## ◈ URDF / Xacro as the robot's structural language
+<h2 align="center">◈ URDF / Xacro as the robot's structural language</h2>
 
 ```mermaid
 %%{init: {"theme":"base","themeVariables":{"background":"#0d1117","primaryTextColor":"#f8fafc","lineColor":"#64748b"}}}%%
@@ -370,9 +377,9 @@ flowchart TB
 
 ---
 
-# Simulation Layer
+<h1 align="center">Simulation Layer</h1>
 
-<table>
+<table align="center">
 <tr>
 <td width="50%" align="center">
 <h2>RViz</h2>
@@ -389,9 +396,9 @@ flowchart TB
 
 ---
 
-# From ROS to Real Motion
+<h1 align="center">From ROS to Real Motion</h1>
 
-> **The interesting moment is when software stops describing motion and starts causing it.**
+<p align="center"><b>The interesting moment is when software stops describing motion and starts causing it.</b></p>
 
 ```mermaid
 %%{init: {"theme":"base","themeVariables":{"background":"#0d1117","primaryTextColor":"#ffffff","lineColor":"#64748b"}}}%%
@@ -411,9 +418,9 @@ flowchart LR
 
 
 
-# Control Core
+<h1 align="center">Control Core</h1>
 
-## Hardware interface loop
+<h2 align="center">Hardware interface loop</h2>
 
 ```cpp
 void ArduinobotInterface::update(const ros::TimerEvent& e)
@@ -429,7 +436,7 @@ void ArduinobotInterface::update(const ros::TimerEvent& e)
 READ STATE  ──►  UPDATE CONTROLLERS  ──►  WRITE COMMANDS
 ```
 
-## Angle conversion
+<h2 align="center">Angle conversion</h2>
 
 ```cpp
 bool convert_radians_to_degrees(
@@ -444,7 +451,7 @@ bool convert_radians_to_degrees(
 }
 ```
 
-## Simulation / hardware split
+<h2 align="center">Simulation / hardware split</h2>
 
 ```xml
 <group unless="$(arg is_sim)">
@@ -463,40 +470,9 @@ bool convert_radians_to_degrees(
 
 ---
 
-# Repository Anatomy
+<h1 align="center">Engineering Map</h1>
 
-```text
-frame2motion/
-│
-├── assets/
-│   ├── hero/
-│   ├── kinematics/
-│   ├── diagrams/
-│   └── gallery/
-│
-├── arduinobot_description/
-│   ├── launch/
-│   ├── mesh/
-│   ├── rviz/
-│   └── urdf/
-│
-├── arduinobot_controller/
-│   ├── config/
-│   ├── include/
-│   ├── launch/
-│   ├── src/
-│   └── srv/
-│
-├── arduinobot_test/
-│
-└── README.md
-```
-
----
-
-# Engineering Map
-
-<table>
+<table align="center">
 <tr>
 <td width="50%" valign="top">
 <h3>🧭 Motion Mathematics</h3>
@@ -521,7 +497,7 @@ Radian-to-degree mapping · Custom service · rosserial · Arduino actuation · 
 
 ---
 
-# Technology Strip
+<h1 align="center">Technology Strip</h1>
 
 <p align="center">
   <img src="https://img.shields.io/badge/ROS%20Noetic-111827?style=for-the-badge&logo=ros&logoColor=white" />
@@ -549,7 +525,7 @@ Radian-to-degree mapping · Custom service · rosserial · Arduino actuation · 
 
 <div align="center">
 
-## frame2motion
+<h2 align="center">frame2motion</h2>
 
 **Frames define motion. Software organizes it. Hardware makes it real.**
 
