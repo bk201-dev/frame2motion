@@ -110,11 +110,7 @@ Frames  →  Kinematics  →  URDF/Xacro  →  ros_control  →  Hardware Interf
   <img src="assets/hero/frame2motion-hero.png" width="92%" alt="frame2motion hero visual"/>
 </p>
 
-<p align="center">
-  <sub>
-    Suggested visual: dark premium banner with the robotic arm, reference axes, soft glow, and a clean technical atmosphere.
-  </sub>
-</p>
+
 
 ---
 
