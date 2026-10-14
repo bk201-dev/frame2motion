@@ -325,11 +325,7 @@ flowchart LR
     class MCU,SERVO hw;
 ```
 
-<p align="center">
-  <img src="assets/gallery/hardware-link.png" width="82%" alt="Software to hardware communication path"/>
-</p>
 
----
 
 # Control Core
 
@@ -465,34 +461,7 @@ Radian-to-degree mapping · Custom service · rosserial · Arduino actuation · 
   <img src="https://img.shields.io/badge/YAML-111827?style=for-the-badge&logo=yaml&logoColor=white" />
 </p>
 
----
 
-# Visual Gallery
-
-<table>
-<tr>
-<td width="50%" align="center">
-<img src="assets/gallery/rviz-view.png" width="100%" alt="RViz View"/><br>
-<b>RViz · Robot State & TF</b>
-</td>
-<td width="50%" align="center">
-<img src="assets/gallery/gazebo-view.png" width="100%" alt="Gazebo View"/><br>
-<b>Gazebo · Physics Simulation</b>
-</td>
-</tr>
-<tr>
-<td width="50%" align="center">
-<img src="assets/gallery/urdf-structure.png" width="100%" alt="URDF Structure"/><br>
-<b>URDF · Structural Model</b>
-</td>
-<td width="50%" align="center">
-<img src="assets/gallery/hardware-link.png" width="100%" alt="Hardware Link"/><br>
-<b>ROS ↔ Hardware Bridge</b>
-</td>
-</tr>
-</table>
-
----
 
 <div align="center">
 
