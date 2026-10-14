@@ -20,32 +20,69 @@ A ROS Noetic robotic-arm project connecting
   <img src="https://img.shields.io/badge/Gazebo-Simulation-111827?style=for-the-badge" />
   <img src="https://img.shields.io/badge/Arduino-Real_Actuation-111827?style=for-the-badge&logo=arduino&logoColor=white" />
 </p>
+<p align="center">
+  <img src="https://img.shields.io/badge/Status-In%20Progress-blue?style=for-the-badge">
+  <img src="https://img.shields.io/badge/Stage-Currently%20Under%20Development-1f6feb?style=for-the-badge">
+</p>
 
 <br>
 
 > **A robot arm is not one mechanism. It is a chain of frames, transforms, software layers, commands and actuators — all agreeing on what “move” means.**
 
-</div>
+> NOTE :
+> This repository documents a robotic arm project currently under development.  
+> Some files, implementations, and validation results will be added later as the project progresses and becomes more finalized.
 
 ---
+
 
 ## ◈ The Motion Chain
 
-<table>
-<tr>
-<td width="20%" align="center"><h3>01</h3><b>FRAME</b><br><sub>Where is it?</sub></td>
-<td width="20%" align="center"><h3>02</h3><b>TRANSFORM</b><br><sub>How does it move?</sub></td>
-<td width="20%" align="center"><h3>03</h3><b>MODEL</b><br><sub>What is connected?</sub></td>
-<td width="20%" align="center"><h3>04</h3><b>CONTROL</b><br><sub>What should move?</sub></td>
-<td width="20%" align="center"><h3>05</h3><b>ACTUATE</b><br><sub>Make it real.</sub></td>
-</tr>
+<p align="center">
+  This project follows a full motion pipeline, starting from geometric understanding and ending with physical robot actuation.
+</p>
+
+<br>
+
+<table align="center">
+  <tr>
+    <td align="center" width="180">
+      <h3>01</h3>
+      <b>FRAME</b><br><br>
+      <sub>Where is it?</sub>
+    </td>
+    <td align="center" width="180">
+      <h3>02</h3>
+      <b>TRANSFORM</b><br><br>
+      <sub>How does it move?</sub>
+    </td>
+    <td align="center" width="180">
+      <h3>03</h3>
+      <b>MODEL</b><br><br>
+      <sub>What is connected?</sub>
+    </td>
+    <td align="center" width="180">
+      <h3>04</h3>
+      <b>CONTROL</b><br><br>
+      <sub>What should move?</sub>
+    </td>
+    <td align="center" width="180">
+      <h3>05</h3>
+      <b>ACTUATE</b><br><br>
+      <sub>Make it real.</sub>
+    </td>
+  </tr>
 </table>
 
-```text
-REFERENCE FRAME  ──►  KINEMATICS  ──►  URDF / XACRO  ──►  ROS CONTROL  ──►  ARDUINO  ──►  SERVO MOTION
-```
+<br>
 
----
+<p align="center">
+
+`REFERENCE FRAME` → `KINEMATICS` → `URDF / XACRO` → `ROS CONTROL` → `ARDUINO` → `SERVO MOTION`
+
+</p>
+
+<br>
 
 ## ◈ System Choreography
 
@@ -95,14 +132,33 @@ Everything begins with one question:
 
 The project starts in 2D to make the geometry intuitive, then extends the same reasoning to 3D rigid-body motion.
 
-<table>
-<tr>
-<td width="33%" align="center"><h3>Translation</h3><b>Move the origin</b><br><br><code>pW = pL + t</code></td>
-<td width="33%" align="center"><h3>Rotation</h3><b>Change orientation</b><br><br><code>pW = R pL</code></td>
-<td width="33%" align="center"><h3>Rigid Transform</h3><b>Do both at once</b><br><br><code>pW = R pL + t</code></td>
-</tr>
+<p align="center">
+  The project starts in 2D to build intuition, then extends the same ideas to 3D rigid-body motion.
+</p>
+
+<br>
+
+<table align="center">
+  <tr>
+    <td align="center" width="260">
+      <h3>Translation</h3>
+      <b>Move the origin</b><br><br>
+      <code>p<sup>W</sup> = p<sup>L</sup> + t</code>
+    </td>
+    <td align="center" width="260">
+      <h3>Rotation</h3>
+      <b>Change orientation</b><br><br>
+      <code>p<sup>W</sup> = R p<sup>L</sup></code>
+    </td>
+    <td align="center" width="260">
+      <h3>Rigid Transform</h3>
+      <b>Do both at once</b><br><br>
+      <code>p<sup>W</sup> = R p<sup>L</sup> + t</code>
+    </td>
+  </tr>
 </table>
 
+<br>
 <details>
 <summary><b>▸ Open the 2D derivation</b></summary>
 
