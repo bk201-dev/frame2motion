@@ -188,7 +188,7 @@ The project starts in 2D to make the geometry intuitive, then extends the same r
 
 <br>
 <details>
-<summary><b>▸ Open the 2D derivation</b></summary>
+<summary><b> Open the 2D derivation</b></summary>
 
 ### Translation
 
@@ -234,7 +234,7 @@ The project starts in 2D to make the geometry intuitive, then extends the same r
 ## 02 — From the plane to 3D
 
 <details>
-<summary><b>▸ Open the 3D rotation matrices</b></summary>
+<summary><b> Open the 3D rotation matrices</b></summary>
 
 ### Rotation around X
 
