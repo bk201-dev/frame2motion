@@ -139,23 +139,51 @@ The project starts in 2D to make the geometry intuitive, then extends the same r
 <br>
 
 <table align="center">
-  <tr>
-    <td align="center" width="260">
-      <h3>Translation</h3>
-      <b>Move the origin</b><br><br>
-      <code>p<sup>W</sup> = p<sup>L</sup> + t</code>
-    </td>
-    <td align="center" width="260">
-      <h3>Rotation</h3>
-      <b>Change orientation</b><br><br>
-      <code>p<sup>W</sup> = R p<sup>L</sup></code>
-    </td>
-    <td align="center" width="260">
-      <h3>Rigid Transform</h3>
-      <b>Do both at once</b><br><br>
-      <code>p<sup>W</sup> = R p<sup>L</sup> + t</code>
-    </td>
-  </tr>
+<tr>
+
+<td align="center" width="250">
+
+<sub>01</sub>
+
+### Translation
+
+**Position Shift**
+
+<br>
+
+<code>p<sup>W</sup> = p<sup>L</sup> + t</code>
+
+</td>
+
+<td align="center" width="250">
+
+<sub>02</sub>
+
+### Rotation
+
+**Orientation Change**
+
+<br>
+
+<code>p<sup>W</sup> = R p<sup>L</sup></code>
+
+</td>
+
+<td align="center" width="250">
+
+<sub>03</sub>
+
+### Rigid Transform
+
+**Position + Orientation**
+
+<br>
+
+<code>p<sup>W</sup> = R p<sup>L</sup> + t</code>
+
+</td>
+
+</tr>
 </table>
 
 <br>
